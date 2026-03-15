@@ -18,7 +18,7 @@ Thematically rooted in Southern African folklore, this submod explores the ancie
 1. Place the `impundulu_submod` folder in your CK3 mod directory.
 2. Place `impundulu_submod.mod` in the same directory as other `.mod` files.
 3. In the CK3 launcher, enable **both** Princes of Darkness and this submod.
-4. **Load order:** This submod must load **after** Princes of Darkness. It overrides the Impundulu house modifier (`dynn_impundulu_modifier`) and adds new content that depends on PoD's systems.
+4. **Load order:** This submod should be loaded **after** Princes of Darkness.
 
 ---
 
@@ -64,16 +64,6 @@ A branching clan objective investigating the decline of the Bomkazi bloodline wi
 **Branch B — The Ishologu Rite:** Sever the Bomkazi dependency. Character gains stress reduction (-50%) and scheme success (+10%), at the cost of faith opinion (-10).
 
 The choice is permanent, globally locks the decision, and notifies all vampire players.
-
----
-
-### Mini-Objective: Guardian of the Passage
-
-Triggers when a Bomkazi courtier dies in the player's court, allowing the Impundulu to perform funeral rites using their necromantic knowledge.
-
-- Requires Necromancy level 2+
-- Two response options offering stress relief and piety
-- Completing the rite initiates the next Bomkazi cultivation cycle
 
 ---
 
@@ -184,5 +174,4 @@ impundulu_submod/
 - **Required:** Princes of Darkness mod for CK3
 - **CK3 Version:** 1.18.*
 - **File prefix:** All files use the `IMP_` prefix to avoid collisions with PoD or other submods.
-- **Override:** Only `dynn_impundulu_modifier` is overridden; all other content is additive.
 
