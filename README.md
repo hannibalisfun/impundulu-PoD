@@ -2,7 +2,7 @@
 
 A submod for **Crusader Kings III: Princes of Darkness** that expands the Impundulu vampire bloodline.
 
-Thematically rooted in Southern African folklore, this submod explores the ancient covenant between the Impundulu vampires and the Bomkazi — mortal life-witches bound to them across generations.
+This submod focuses on the ancient covenant between the Impundulu vampires and the Bomkazi — mortal life-witches bound to them across generations.
 
 ---
 
