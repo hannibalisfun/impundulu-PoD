@@ -14,16 +14,6 @@
  imp_guardian_bomkazi_died_tt: "A Bomkazi courtier has died recently"
 
  ### ==========================================
- ### MINI-OBJECTIVE: Guardian of the Passage
- ### ==========================================
-
- imp_guardian_passage_decision: "Guardian of the Passage"
- imp_guardian_passage_decision_tooltip: "When a Bomkazi witch dies, it falls to the Impundulu to guide her soul safely to the afterlife. This is our sacred duty — the obligation that defines us."
- imp_guardian_passage_decision_desc: "A Bomkazi has fallen. The covenant demands that we perform the funeral rites — guiding her spirit through the passage between worlds. This is what we are. This is what we do.\n\nThe rites will require necromantic skill."
- imp_guardian_passage_decision_confirm: "We will honor the dead."
- imp_guardian_passage_decision_effect_tooltip: "You will perform funeral rites for the fallen Bomkazi, triggering the search for a new Bomkazi and gaining stress relief."
-
- ### ==========================================
  ### OBJECTIVE COMPLETION EVENTS
  ### ==========================================
 

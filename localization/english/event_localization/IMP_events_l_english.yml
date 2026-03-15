@@ -79,7 +79,7 @@
  IMP_artifacts.2.t: "The Drums of Dread"
  IMP_artifacts.2.desc: "Human skin stretched over bone. The drumsticks carved from a hanged man's ribs. When struck, no living ear perceives the sound — but the dead hear, and they obey.\n\nThe spirits bound to these drums will carry nightmares to any sleeper we name."
  IMP_artifacts.2.a: "Let the living know the terror of the dead."
- IMP_nightmare_drums_crafted_tt: "You have crafted Nightmare Drums. They generate monthly dread and boost hostile scheme power."
+ IMP_nightmare_drums_crafted_tt: "You have crafted Nightmare Drums. They generate dread and boost hostile scheme power."
 
  ### Witch Eye
  IMP_artifacts.3.t: "The Price of Sight"

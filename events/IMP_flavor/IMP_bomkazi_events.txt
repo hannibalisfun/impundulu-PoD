@@ -131,7 +131,7 @@ IMP_bomkazi.3 = {
 					culture = root.culture
 					faith = root.faith
 					gender_female_chance = 75
-					trait = mortal
+					trait = revenant
 					learning = { 8 14 }
 					diplomacy = { 4 8 }
 					martial = { 2 6 }
@@ -145,9 +145,10 @@ IMP_bomkazi.3 = {
 
 				scope:bomkazi_candidate = {
 					add_trait = bomkazi_witch
-					add_trait = sorcerer
 					add_trait = pure_blooded
-					add_trait = revenant
+
+					POD_character_revenant_discipline_initialization_effect = yes
+					POD_learn_dur_an_ki_bloodmagic_effect = yes
 
 					### Apply quality-specific bonuses
 					if = {

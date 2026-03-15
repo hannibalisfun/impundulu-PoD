@@ -13,7 +13,7 @@ bomkazi_witch = {
 
 	inherit_chance = 0
 
-	icon = lifestyle_mystic.dds
+	icon = bomkazi_witch.dds
 
 	desc = {
 		first_valid = {
@@ -37,7 +37,7 @@ bomkazi_apprentice = {
 
 	inherit_chance = 0
 
-	icon = lifestyle_mystic.dds
+	icon = bomkazi_witch.dds
 
 	desc = {
 		first_valid = {

@@ -85,7 +85,7 @@ IMP_flavor.2 = {
 	option = {
 		name = IMP_flavor.2.a
 		stress_impact = {
-			base = medium_stress_impact_loss
+			base = minor_stress_impact_loss
 		}
 		add_piety = minor_piety_value
 
@@ -102,7 +102,7 @@ IMP_flavor.2 = {
 	option = {
 		name = IMP_flavor.2.b
 		stress_impact = {
-			base = minor_stress_impact_loss
+			base = medium_stress_impact_loss
 		}
 
 		hidden_effect = {
