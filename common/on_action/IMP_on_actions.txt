@@ -1,0 +1,161 @@
+﻿### Impundulu Submod — On-Action Hooks
+### Uses on_actions chaining to avoid overwriting PoD/vanilla effect blocks
+### Pattern: vanilla_on_action = { on_actions = { IMP_custom } }
+### Then define IMP_custom with its own effect block
+
+### ==========================================
+### CHAIN INTO VANILLA ON-ACTIONS
+### ==========================================
+
+on_game_start_after_lobby = {
+	on_actions = {
+		IMP_on_game_start
+	}
+}
+
+on_join_court = {
+	on_actions = {
+		IMP_on_join_court
+	}
+}
+
+on_death = {
+	on_actions = {
+		IMP_on_death
+	}
+}
+
+on_yearly_pulse = {
+	on_actions = {
+		IMP_on_yearly_pulse
+	}
+}
+
+### ==========================================
+### CUSTOM ON-ACTIONS
+### ==========================================
+
+### Trigger Bomkazi cultivation for Impundulu players at game start
+### Mirrors how Giovanni adoption fires via POD_introductions_events.txt
+### Also fires founder grief event for character 791175
+IMP_on_game_start = {
+	effect = {
+		every_player = {
+			limit = {
+				is_impundulu_trigger = yes
+			}
+			trigger_event = {
+				id = IMP_bomkazi.1
+				days = 11
+			}
+			### Fire founder event for Impundulu founder or direct children
+			if = {
+				limit = {
+					OR = {
+						this = character:791175
+						father = { this = character:791175 }
+					}
+					NOT = { has_character_flag = imp_founder_grief_fired }
+				}
+				trigger_event = {
+					id = IMP_flavor.4
+					days = { 30 180 }
+				}
+			}
+		}
+	}
+}
+
+### Fire Bomkazi cultivation for newly spawned Impundulu players (mid-game joins)
+IMP_on_join_court = {
+	effect = {
+		if = {
+			limit = {
+				is_impundulu_trigger = yes
+				is_playable_character = yes
+				NOT = { has_character_flag = imp_bomkazi_cultivation_active }
+				NOT = { has_character_flag = imp_bomkazi_cultivation_refused }
+			}
+			trigger_event = {
+				id = IMP_bomkazi.1
+				days = 30
+			}
+		}
+	}
+}
+
+### Hook for Bomkazi courtier death — triggers passing event and mini-objective availability
+IMP_on_death = {
+	effect = {
+		if = {
+			limit = {
+				OR = {
+					has_trait = bomkazi_witch
+					has_trait = bomkazi_apprentice
+				}
+			}
+			### Notify the Impundulu liege
+			if = {
+				limit = {
+					exists = liege
+					liege = { is_impundulu_trigger = yes }
+				}
+				liege = {
+					trigger_event = {
+						id = IMP_flavor.2
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+
+### Periodic pulse for flavor events
+### "The Blood Runs Thin" fires for Impundulu who haven't completed the objective
+### "The Necromancer's Offer" fires when a foreign necromancer is nearby
+IMP_on_yearly_pulse = {
+	effect = {
+		every_player = {
+			limit = {
+				is_impundulu_trigger = yes
+			}
+			### The Blood Runs Thin — ~4% chance per year
+			if = {
+				limit = {
+					NOT = { has_completed_withering_blood_trigger = yes }
+				}
+				random = {
+					chance = 4
+					trigger_event = {
+						id = IMP_flavor.1
+						days = { 1 30 }
+					}
+				}
+			}
+			### The Necromancer's Offer — ~15% chance per year, with cooldown
+			if = {
+				limit = {
+					NOT = { has_character_flag = imp_necromancer_offer_cooldown }
+					any_ruler = {
+						is_vampire_trigger = yes
+						is_necromantic_vampire_trigger = yes
+						NOT = { is_impundulu_trigger = yes }
+						opinion = {
+							target = prev
+							value >= 20
+						}
+						is_alive = yes
+					}
+				}
+				random = {
+					chance = 15
+					trigger_event = {
+						id = IMP_flavor.3
+						days = { 30 180 }
+					}
+				}
+			}
+		}
+	}
+}

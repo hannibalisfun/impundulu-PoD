@@ -1,0 +1,51 @@
+﻿### Impundulu Submod — Trait Definitions
+
+### Bomkazi Witch — full cultivation success
+### A mortal life-witch cultivated by the Impundulu as a spiritual companion
+bomkazi_witch = {
+	flag = bomkazi_trait
+	shown_in_ruler_designer = no
+
+	learning = 2
+	health = 0.5
+	monthly_piety = 0.1
+	same_opinion = 10
+
+	inherit_chance = 0
+
+	icon = lifestyle_mystic.dds
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = trait_bomkazi_witch_desc
+			}
+			desc = trait_bomkazi_witch_character_desc
+		}
+	}
+}
+
+### Bomkazi Apprentice — partial cultivation success
+### A mortal with some life-magic talent, but not fully realized
+bomkazi_apprentice = {
+	flag = bomkazi_trait
+	shown_in_ruler_designer = no
+
+	learning = 1
+	health = 0.25
+
+	inherit_chance = 0
+
+	icon = lifestyle_mystic.dds
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = trait_bomkazi_apprentice_desc
+			}
+			desc = trait_bomkazi_apprentice_character_desc
+		}
+	}
+}
